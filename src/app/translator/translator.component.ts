@@ -19,6 +19,7 @@ export class TranslatorComponent implements OnInit{
   targetLanguage: string = 'en-GB';
   input!:string;
   translation!:string;
+  waiting: boolean = false;
 
   async ngOnInit(): Promise<void> {
     const response = await axios.get('https://api-sandbox.translated.com/v2/symbol/languages')
@@ -48,11 +49,13 @@ export class TranslatorComponent implements OnInit{
 
   async translate(){
     if(this.input.length < 1) return;
+    this.waiting = true;
     let url: string = `https://api.mymemory.translated.net/get?q=${this.input}!&langpair=${this.sourceLanguage}|${this.targetLanguage}`;
     const response = await axios.get(url)
     if(response.data){
       this.translation = response.data.responseData.translatedText  
     }
+    this.waiting = false;
   }
 }
 

@@ -37,6 +37,9 @@
   <div class="translation-container">
     <mat-form-field>
       <input readonly matInput placeholder="Translation" [(ngModel)]="translation">
+      <ng-container *ngIf="waiting">
+        <mat-spinner></mat-spinner>
+      </ng-container>      
     </mat-form-field>
     <div class="icon-container"></div>
   </div>
