@@ -1,4 +1,4 @@
-.dropdown-container{
+.dropdown-container, .textarea-container{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -39,4 +39,30 @@ mat-form-field{
     font-size: 4vw;
     height: 4vw;
     width: 4vw;
+}
+
+.divider {
+    width: 1px;
+    background-color: gray;
+    height: 105%;
+}
+
+.textarea-container {
+    display: flex;
+    align-items: stretch;
+    height: 80%
+}
+  
+.input-container,
+.translation-container {
+    flex: 1;
+    display: flex;
+    margin-left: 10vw;
+    height: 70%;
+    width: 100%;
+}
+
+.horizontal-divider{
+    height: 1px;
+    background-color: gray;
 }
