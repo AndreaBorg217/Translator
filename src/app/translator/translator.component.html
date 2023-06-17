@@ -1,0 +1,17 @@
+<mat-form-field>
+    <mat-select [(ngModel)]="sourceLanguage">
+      <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
+        <span>{{lang.flag}}</span>
+        {{lang.language}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+    <mat-select [(ngModel)]="targetLanguage">
+      <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
+        <span>{{lang.flag}}</span>
+        {{lang.language}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>
