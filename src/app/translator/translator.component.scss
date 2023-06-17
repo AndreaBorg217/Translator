@@ -1,0 +1,42 @@
+.dropdown-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 2vh;
+}
+
+mat-form-field{
+    width: 20vw;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+}
+
+.mat-option{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    font-size: 2vw;
+}
+
+.flag{
+    font-size: 3vw;
+    padding-right: 0.5vw;
+    vertical-align: middle;
+}
+
+.swap{
+    margin-bottom: 2vh;
+    width: fit-content;
+    height: fit-content;
+}
+
+.icon{
+    font-size: 4vw;
+    height: 4vw;
+    width: 4vw;
+}

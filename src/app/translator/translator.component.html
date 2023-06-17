@@ -1,21 +1,23 @@
-<mat-form-field>
+<div class="dropdown-container">
+  <mat-form-field>
     <mat-select [(ngModel)]="sourceLanguage">
       <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
-        <span>{{lang.flag}}</span>
+        <span class="flag">{{lang.flag}}</span>
         {{lang.language}}
       </mat-option>
     </mat-select>
 </mat-form-field>
 
-<button mat-icon-button color="primary" (click)="swapLanguages()">
-    <mat-icon class="icon">swap_horiz</mat-icon>
-</button>
+  <button class="swap" mat-icon-button color="primary" (click)="swapLanguages()">
+      <mat-icon class="icon">swap_horiz</mat-icon>
+  </button>
 
-<mat-form-field>
-    <mat-select [(ngModel)]="targetLanguage">
-      <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
-        <span>{{lang.flag}}</span>
-        {{lang.language}}
-      </mat-option>
-    </mat-select>
-</mat-form-field>
+  <mat-form-field>
+      <mat-select [(ngModel)]="targetLanguage">
+        <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
+          <span class="flag">{{lang.flag}}</span>
+          {{lang.language}}
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+</div>
