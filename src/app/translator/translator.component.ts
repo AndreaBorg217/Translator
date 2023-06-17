@@ -47,6 +47,7 @@ export class TranslatorComponent implements OnInit{
   }
 
   async translate(){
+    if(this.input.length < 1) return;
     let url: string = `https://api.mymemory.translated.net/get?q=${this.input}!&langpair=${this.sourceLanguage}|${this.targetLanguage}`;
     const response = await axios.get(url)
     if(response.data){
