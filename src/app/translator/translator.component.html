@@ -27,22 +27,23 @@
 <div class="textarea-container">
   <div class="input-container">
     <mat-form-field>
-      <input matInput placeholder="Enter text" [(ngModel)]="input">
+      <input class="textarea"matInput placeholder="Enter text" [(ngModel)]="input">
     </mat-form-field>
-    <div class="icon-container"></div>
   </div>
   
   <mat-divider class="vertical-divider" vertical></mat-divider>
   
   <div class="translation-container">
     <mat-form-field>
-      <input readonly matInput placeholder="Translation" [(ngModel)]="translation">
+      <input class="textarea" readonly matInput placeholder="Translation" [(ngModel)]="translation">
       <ng-container *ngIf="waiting">
         <mat-spinner></mat-spinner>
       </ng-container>      
     </mat-form-field>
-    <div class="icon-container"></div>
   </div>
 </div>
 
-<button mat-raised-button color="primary" (click)="translate()">Translate</button>
+
+<div class="button-container">
+  <button class="translate-button" mat-raised-button color="primary" (click)="translate()">Translate</button>
+</div>
