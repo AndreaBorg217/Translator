@@ -43,6 +43,24 @@
   </div>
 </div>
 
+<div class="icon-container">
+  <div class="input-icons">
+    <button mat-icon-button>
+      <mat-icon color="primary" class="icon">mic</mat-icon>
+    </button>
+    <button mat-icon-button (click)="speak(this.input, this.sourceLanguage)">
+      <mat-icon color="primary" class="icon">volume_up</mat-icon>
+    </button>
+  </div>
+  <div class="translation-icons">
+    <button mat-icon-button (click)="speak(this.translation, this.targetLanguage)">
+      <mat-icon color="primary" class="icon">volume_up</mat-icon>
+    </button>
+    <button mat-icon-button (click)="copy()">
+      <mat-icon color="primary" class="icon">content_copy</mat-icon>
+    </button>
+  </div>
+</div>
 
 <div class="button-container">
   <button class="translate-button" mat-raised-button color="primary" (click)="translate()">Translate</button>

@@ -57,6 +57,21 @@ export class TranslatorComponent implements OnInit{
     }
     this.waiting = false;
   }
+
+  async copy(){
+    try {
+      await navigator.clipboard.writeText(this.translation);
+    }
+    catch (err) {
+      console.error('Could not write to clipboard', err);
+    }
+  }
+
+  speak(text: string, language: string){
+    let utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = language;
+    speechSynthesis.speak(utterance);
+  }
 }
 
 function getFlag(countryCode: string): string {

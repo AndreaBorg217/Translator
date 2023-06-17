@@ -61,7 +61,7 @@ mat-form-field {
 .translate-button {
   width: 20vw !important;
   height: 8vh !important;
-  margin-top: 5vh;
+  margin-top: 8vh;
   font-size: 2vw;
 }
 
@@ -78,4 +78,33 @@ mat-form-field .textarea{
     height: 100% !important;
 }
 
-  
+.icon-container{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: -10vh;
+}
+
+.icon-container .icon{
+    font-size: 2.5vw;
+    height: 2.5vw;
+    width: 2.5vw;
+}
+
+
+.input-icons, .translation-icons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+
+.input-icons{
+    padding-left: 2vw;
+}
+
+.translation-icons{
+    padding-left: 20vw;
+}
