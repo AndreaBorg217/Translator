@@ -31,6 +31,12 @@ export class TranslatorComponent implements OnInit{
       });      
     }
   }
+
+  swapLanguages(){
+    let temp: string = this.sourceLanguage;
+    this.sourceLanguage = this.targetLanguage
+    this.targetLanguage = temp;
+  }
 }
 
 function getFlag(countryCode: string): string {
