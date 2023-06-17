@@ -17,6 +17,8 @@ export class TranslatorComponent implements OnInit{
   languages!: Language[];
   sourceLanguage: string = 'en-GB';
   targetLanguage: string = 'en-GB';
+  input!:string;
+  translation!:string;
 
   async ngOnInit(): Promise<void> {
     const response = await axios.get('https://api-sandbox.translated.com/v2/symbol/languages')
@@ -36,6 +38,12 @@ export class TranslatorComponent implements OnInit{
     let temp: string = this.sourceLanguage;
     this.sourceLanguage = this.targetLanguage
     this.targetLanguage = temp;
+
+    if(this.translation.length > 0){
+      temp = this.input;
+      this.input = this.translation
+      this.translation = this.input;
+    }
   }
 }
 
