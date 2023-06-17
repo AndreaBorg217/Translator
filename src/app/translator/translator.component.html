@@ -45,9 +45,14 @@
 
 <div class="icon-container">
   <div class="input-icons">
-    <button mat-icon-button>
-      <mat-icon color="primary" class="icon">mic</mat-icon>
-    </button>
+    <div class="mic-container">
+      <button mat-icon-button (click)="voiceInput()">
+        <mat-icon color="primary" class="icon">mic</mat-icon>
+      </button>
+      <ng-container *ngIf="this.recognition.isListening">
+        <mat-progress-bar class="progress-bar" mode="indeterminate"></mat-progress-bar>
+      </ng-container> 
+    </div>
     <button mat-icon-button (click)="speak(this.input, this.sourceLanguage)">
       <mat-icon color="primary" class="icon">volume_up</mat-icon>
     </button>

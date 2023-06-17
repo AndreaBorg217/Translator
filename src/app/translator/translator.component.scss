@@ -108,3 +108,16 @@ mat-form-field .textarea{
 .translation-icons{
     padding-left: 20vw;
 }
+
+.mic-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar{
+    padding-top: 2vh;
+    padding-left: 2vh;
+    width: 2vw;
+}
