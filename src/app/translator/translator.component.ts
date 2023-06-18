@@ -61,6 +61,7 @@ export class TranslatorComponent implements OnInit{
       this.translation = this.input
       return;
     }
+    this.input.trim()
     this.waiting = true;
     let url: string = `https://api.mymemory.translated.net/get?q=${this.input}!&langpair=${this.sourceLanguage}|${this.targetLanguage}`;
     const response = await axios.get(url)
