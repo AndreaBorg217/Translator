@@ -34,12 +34,14 @@
   <mat-divider class="vertical-divider" vertical></mat-divider>
   
   <div class="translation-container">
-    <mat-form-field>
-      <input class="textarea" readonly matInput placeholder="Translation" [(ngModel)]="translation">
-      <ng-container *ngIf="waiting">
-        <mat-spinner></mat-spinner>
-      </ng-container>      
-    </mat-form-field>
+    <ng-container *ngIf="!waiting">
+      <mat-form-field>
+          <input class="textarea" readonly matInput placeholder="Translation" [(ngModel)]="translation">
+      </mat-form-field>
+    </ng-container> 
+    <ng-container *ngIf="waiting">
+      <mat-spinner></mat-spinner>
+    </ng-container>      
   </div>
 </div>
 
