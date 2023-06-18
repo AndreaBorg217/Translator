@@ -27,9 +27,17 @@
 <div class="textarea-container">
   <div class="input-container">
     <form>
-      <textarea class="textarea"matInput placeholder="Enter text" [(ngModel)]="input" name="input"></textarea>
+      <textarea maxlength="450" class="textarea"matInput placeholder="Enter text" [(ngModel)]="input" name="input"></textarea>
     </form>
-  </div>
+    <div id="char-count">
+      <ng-container *ngIf="input">
+        <span class="count">{{this.input.length}}/450</span>
+      </ng-container>
+      <ng-container *ngIf="!input">
+        <span class="count">0/450</span>
+      </ng-container>
+    </div>
+</div>
   
   <mat-divider class="vertical-divider" vertical></mat-divider>
   
