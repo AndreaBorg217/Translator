@@ -38,7 +38,8 @@ export class TranslatorComponent implements OnInit{
           language: l.value,
           flag: getFlag(l.key)
         };
-      });      
+      }); 
+      this.languages.sort((a, b) => a.language.localeCompare(b.language));
     }
   }
 
