@@ -121,3 +121,22 @@ mat-form-field .textarea{
     padding-left: 2vh;
     width: 2vw;
 }
+
+.textarea{
+    -webkit-appearance: none;
+    outline: none;
+}
+
+textarea {
+    -webkit-appearance: none;
+    outline: none;
+    background-color: #F9FAFD;
+    border: 0;
+    font-size: 2vw;
+    padding-top: 5vh;
+    width: 35vw;
+    height: 45vh;
+    resize: none;
+    text-align: left;
+    font-family: Roboto;
+}
