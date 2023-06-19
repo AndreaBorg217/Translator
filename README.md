@@ -1,27 +1,21 @@
 # Translator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+This project was developed in Angular using Material components.  
 
-## Development server
+## Features
+- Picking a source and target language from a dropdown allowing one to swap the chosen values
+- The country code for a given language is used to obtain an emoji of the country's flag.  This is subject to change depending on one's OS and browser.
+- Text to speech of the input text and translation
+- Voice input
+- Copying of a translation to clipboard
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## APIs
+It uses MyMemory's APIs to obtain a list of available languages and for the translation.  It also uses the Web Speech API for text to speech and voice recognition.  The navigator.clipboard API is used to copy a translation.
 
-## Code scaffolding
+## Running the app.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Make sure you have node.js and npm installed.  Run `npm install` to install the required libraries.  Then run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<p align="center">
+  <img src="Screenshots\Screenshot 2023-06-18 at 22.53.16.png">
+</p>
