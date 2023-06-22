@@ -21,6 +21,10 @@ export class TranslatorComponent implements OnInit{
   translation!:string;
   waiting: boolean = false;
   recognition: any;
+  filteredInputLanguages!: Language[];
+  filteredTargetLanguages!: Language[];
+  inputSearchKey: string = "";
+  targetSearchKey: string = "";
 
   constructor() {
     this.recognition = new (window as any).webkitSpeechRecognition();
@@ -40,6 +44,10 @@ export class TranslatorComponent implements OnInit{
         };
       }); 
       this.languages.sort((a, b) => a.language.localeCompare(b.language));
+      // adding a language at the bottom because of filtering comments below
+      this.languages.push(this.languages[0])
+      this.filteredInputLanguages = this.languages
+      this.filteredTargetLanguages = this.languages
     }
   }
 
@@ -104,6 +112,28 @@ export class TranslatorComponent implements OnInit{
 
     this.input = text;
   };
+
+  filterInput() {
+    this.filteredInputLanguages = this.filterLanguages(this.inputSearchKey, this.sourceLanguage);
+  }
+  
+  filterTarget() {
+    this.filteredTargetLanguages = this.filterLanguages(this.targetSearchKey, this.targetLanguage);
+  }
+  
+  filterLanguages(key: string, selectedLanguage: string) {    
+    let list = this.languages.filter((l) =>
+      l.language.toLowerCase().includes(key.trim().toLowerCase())
+    );
+    
+
+    // selected language is added to the end so as not to remove selected value if not in filtered list
+    // last item in list isn't displayed in UI anyways so duplicate language isn't a concern
+    const selectedLang = this.languages.find((lang) => lang.countryCode === selectedLanguage);
+    if (selectedLang) list.push(selectedLang);      
+    return list;
+  }
+  
 }
     
 

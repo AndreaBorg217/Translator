@@ -146,3 +146,21 @@ textarea {
   margin-left: -6vw;
   font-size: 1.5vw;
 }
+
+.dropdown-search{
+  display: flex;
+  flex-direction: row;
+  align-items:  center;
+  background-color: #F9FAFD;
+  height: 6vh;
+  margin-top: -1vh;
+}
+
+.search-icon{
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.selected{
+  padding-left: 0.5vw;
+}

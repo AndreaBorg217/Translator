@@ -1,20 +1,30 @@
 <div class="dropdown-container">
   <mat-form-field>
-    <mat-select [(ngModel)]="sourceLanguage">
-      <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
+    <mat-select class="selected" [(ngModel)]="sourceLanguage">
+      <form class="dropdown-search">
+        <mat-icon class="search-icon" matPrefix>search</mat-icon>
+        <input matInput [(ngModel)]="inputSearchKey" (ngModelChange)="filterInput()" name="inputSearchKey">
+      </form>
+      <mat-divider></mat-divider>
+      <mat-option *ngFor="let lang of filteredInputLanguages; let isLast = last" [value]="lang.countryCode" [style.display]="isLast ? 'none' : 'block'">
         <span class="flag">{{lang.flag}}</span>
         {{lang.language}}
-      </mat-option>
+      </mat-option>      
     </mat-select>
-</mat-form-field>
+  </mat-form-field>
 
   <button class="swap" mat-icon-button color="primary" (click)="swapLanguages()">
       <mat-icon class="icon">swap_horiz</mat-icon>
   </button>
 
   <mat-form-field>
-      <mat-select [(ngModel)]="targetLanguage">
-        <mat-option *ngFor="let lang of languages" [value]="lang.countryCode" >
+      <mat-select class="selected" [(ngModel)]="targetLanguage">
+        <form class="dropdown-search">
+          <mat-icon class="search-icon" matPrefix>search</mat-icon>
+          <input placeholder="Search" matInput [(ngModel)]="targetSearchKey" (ngModelChange)="filterTarget()" name="targetSearchKey">
+        </form>
+        <mat-divider></mat-divider>
+        <mat-option *ngFor="let lang of filteredTargetLanguages; let isLast = last" [value]="lang.countryCode" [style.display]="isLast ? 'none' : 'block'">
           <span class="flag">{{lang.flag}}</span>
           {{lang.language}}
         </mat-option>
