@@ -3,7 +3,7 @@
 This project was developed in Angular using Material components.  
 
 ## Features
-- Picking a source and target language from a dropdown allowing one to swap the chosen values
+- Searchable dropdowns to pick an input and target language allowing one to swap the chosen languages
 - The country code for a given language is used to obtain an emoji of the country's flag.  This is subject to change depending on one's OS and browser.
 - Text to speech of the input text and translation
 - Voice input
